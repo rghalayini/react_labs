@@ -1,32 +1,33 @@
 import React from 'react';
-import singleImage from './image';
+import Char from './Char';
 
-class Roster extends Component {
-    constructor(props){
+class Roster extends React.Component {
+    constructor(props) {
         super(props);
+
         this.state = {
-            imageArray: []
+            charArr: []
         }
     }
-    loadComponent(){
-        fetch('http://localhost:8000/roster/')
-        .then (data => {
-            return data.json();
-        })
-        .then (parsedData => {
-            this.setState({imageArray: parsedData});
-        })
+
+    componentDidMount() {
+        fetch('http://localhost:8000/roster')
+            .then(data => {
+                return data.json();
+            }).then(parsedData => {
+                this.setState({charArr: parsedData});
+            })
     }
-    
-    render() { 
-        return ( 
+
+    render() {
+        return(
             <div>
-                {this.state.imageArray.map((p, index)=> {
-                    return <Char key={index} params={p} />
+                {this.state.charArr.map((x, index) => {
+                    return <Char key={index} params={x} />
                 })}
             </div>
-         );
+        )
     }
 }
- 
+
 export default Roster;

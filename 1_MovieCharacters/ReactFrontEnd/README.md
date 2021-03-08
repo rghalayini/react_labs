@@ -1,3 +1,7 @@
+# Info about the lab
+
+This is a lab, used in the Lexicon programing training, to learn React.js. The instructions are found in the pdf in the main folder.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

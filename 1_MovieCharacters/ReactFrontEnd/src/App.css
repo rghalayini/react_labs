@@ -57,3 +57,33 @@
 .warper .case-right {
   right: 0;
 }
+
+.case-left:hover,
+.case-right:hover {
+  cursor: pointer;
+}
+
+.char {
+  border: 3px solid black;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.char-img {
+  max-height: 222px;
+}
+
+.char-img:hover {
+  cursor: pointer;
+}
+
+.bio {
+  width: 47%;
+  margin: auto;
+  border: 1px solid white;
+}
+
+.bio p {
+  width: 90%;
+  margin: auto;
+}

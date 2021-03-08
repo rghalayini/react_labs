@@ -1,30 +1,29 @@
 import React from 'react';
-import singleImage from './image';
+import Char from './Char';
 
-class details extends Component {
-    constructor(params){
+class Bio extends React.Component {
+    constructor(params) {
         super(params);
 
         this.state = {
-            id:0,
-            currentChar:{}
+            id: 0,
+            currentChar: {}
         }
-    
-    
-        this.updateId = (id) => {
-            this.setState({id:id});
-        }
+
+         this.updateId = (id) => {
+            this.setState({id: id});
+        } 
+
         this.promisfyState = obj => {
-            return new Promise (res => {
-                this.setState(obj, res)
-            })
-            .catch (e => {
-                console.log(e)
+            return new Promise(res => {
+              this.setState(obj, res)
+            }).catch(e => {
+              console.log(e)
             })
         }
-    }
-    
-    componentWillReceiveProps () {
+    }  
+
+      componentWillReceiveProps () {
         fetch('http://localhost:8000/character/' + this.props.id)
           .then(data => {
               console.log(data)
@@ -45,15 +44,15 @@ class details extends Component {
             })
     }
 
-
-    render() { 
-        return (  
-            <div className = "details">
-                <Char params = {{url: this.state.currentChar.url}} />
+    render() {
+        return (
+            <div className="bio">
+                <Char params={{url: this.state.currentChar.url}} />
                 <p>{this.state.currentChar.bio}</p>
             </div>
-        );
+        )
     }
+
 }
- 
-export default details;
+
+export default Bio;

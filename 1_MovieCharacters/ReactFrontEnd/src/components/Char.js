@@ -1,15 +1,16 @@
-import React from 'reactDom';
+import React from 'react';
+import observerMenu from '../utils/observer'
 
-let singleImage = (props) => {
+let SingleChar = (props) => {
     return (
-        <div className = 'image-character'>
-            <img onClick={() =>{
+        <div className="char">
+            <img onClick={() => {
                 observerMenu.exercuteObserver('changeFocus', {focusedChar: Number(props.params.id)});
             }}
             className="char-img" 
             src={props.params.url} alt="char" />
-        </ div>
+        </div>
     )
 }
 
-export default singleImage;
+export default SingleChar;
